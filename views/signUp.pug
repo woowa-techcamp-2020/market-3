@@ -2,5 +2,138 @@ doctype html
 html(lang='en')
     head
         title 배민상회
+        meta( name='viewport', content='width=device-width, initial-scale=1.0')
+        style
+            include ../css/signUp.css
     body
-        h1 This is signUp page!
+        header
+            div(class='banner') 배민 사장님 광장
+
+        div(class='container')
+            section(class='requirements')
+                div(class='instruction') 필수 정보를 입력해주세요
+
+                form(class='data', method='POST')
+                div(class='id-form')
+                    input(
+                        type = 'text'
+                        class = 'id-form__input text-input-form'
+                        placeholder = '아이디*(4~20자)'
+                    )
+
+                div(class='password-form')
+                    input(
+                        type = 'text'
+                        class = 'password-form__input text-input-form'
+                        placeholder = '비밀번호*(영문+숫자, 8~20자)'
+                    )
+
+                div(class='password-check-form')
+                    input(
+                        type = 'text'
+                        class = 'password-check-form__input text-input-form'
+                        placeholder = '비밀번호 재확인*'
+                    )
+
+                div(class='email-id-form')
+                    input(
+                        type = 'text'
+                        class = 'email-id-form__input'
+                        placeholder = '이메일 앞자리*'
+                    )
+                span @
+                div(class='email-domain-form')
+                    input(
+                        type = 'text'
+                        class = 'email-domain-form__input'
+                        placeholder = '이메일 뒷자리*'
+                    )
+
+                div(class='email-domain-selector')
+                    select(
+                        class = 'email-domain-selector__list'
+                    )
+                        option(value='') 이메일 선택
+                        option(value='gmail.com') gmail.com
+                        option(value='naver.com') naver.com
+                        option(value='hanmail.net') hanmail.net
+
+                div(class='name-form')
+                    input(
+                        type = 'text'
+                        class = 'name-form__input text-input-form'
+                        placeholder = '이름*'
+                    )
+
+                div(class='mobile-form')
+                    input(
+                        type = 'text'
+                        class = 'mobile-form__input '
+                        placeholder = '휴대폰*'
+                    )
+                    button(
+                        class = 'mobile-form__valid-btn'
+                    ) 인증받기
+
+                    p(class='mobile-form__description__item') 인증번호 전송은 통신사에 따라 최대 1분까지 소요될 수 있습니다
+                    p(class='mobile-form__description__item') 인증번호가 도착하지 않을 경우 '인증번호 재전송'을 눌러주세요.
+
+            section(class='optional')
+                div(class='address-form')
+                input(
+                    class='address-form__checkbox'
+                    type = 'checkbox'
+                ) 
+                label 선택 정보를 입력하시겠어요? 
+                br
+
+                input(
+                    type = 'text'
+                    class = 'address-form__zipcode-input'
+                    placeholder = '우편번호'
+                )
+                button(
+                    class = 'address-form__zipcode-valid-btn'
+                ) 주소찾기
+                br
+                input(
+                    type = 'text'
+                    class = 'address-form__address-input text-input-form'
+                    placeholder = '주소'
+                )
+                br
+                input(
+                    type = 'text'
+                    class = 'address-form__detail-address-input text-input-form'
+                    placeholder = '상세주소'
+                )
+
+            section(class='agreement')
+                div(class='agreement-form')
+                input(
+                    class='agreement-form__all-checkbox'
+                    type = 'checkbox'
+                ) 
+                label 전체 약관에 동의합니다.
+                br
+                input(
+                    class='agreement-form__must-checkbox'
+                    type = 'checkbox'
+                ) 
+                label 필수 항목에 동의합니다. 
+                    br
+                    a 배민사장님광장 이용약관
+                    a 개인정보 수집이용 동의
+                br
+                input(
+                    class='address-form__optional-checkbox'
+                    type = 'checkbox'
+                ) 
+                label 광고성 정보 수신 동의(선택)
+                br
+                p 만 14세 이상 회원만 가입 가능합니다.
+                    a 내용보기
+
+                button(
+                    class='complete-btn'
+                    ) 가입완료
