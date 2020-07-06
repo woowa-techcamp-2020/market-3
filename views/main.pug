@@ -2,5 +2,19 @@ doctype html
 html(lang='en')
     head
         title 배민상회
+        style
+            include ../css/main.css
     body
-        h1 This is main page!
+        div(class='greeting') 
+            h1(class='greeting__text') 사장님, 로그인해주세요!
+        div(class='login-btn') 
+            input(
+                class='login-btn__input'
+                type = 'button'
+                value = '배민사장님광장 로그인'
+            )
+        
+        div(class='find-id-pw-btn')
+            p(class='find-id-pw-btn__text') 아이디/비밀번호 찾기
+        div(class='signup-btn')
+            p(class='signup-btn__text') 회원가입
