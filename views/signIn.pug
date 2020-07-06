@@ -2,6 +2,37 @@ doctype html
 html(lang='en')
     head
         title 배민상회
-        meta( name='viewport', content='width=device-width, initial-scale=1.0')
+        meta( name='viewport' content='width=device-width, initial-scale=1.0')
+        style 
+            include ../css/signIn.css
     body
-        h1 This is signIn page!
+        header(class='banner') 배민 사장님 광장
+
+        div(class='container')
+            div(class='id-form')
+                input(
+                    class='id-form__input text-input-form'
+                    type='text'
+                    placeholder='아이디'
+                )
+
+            div(class='password-form')
+                input(
+                    class='password-form__input password-input-form'
+                    type='password'
+                    placeholder='비밀번호'
+                )
+
+            div(class='others')
+                div(class='remeber-id')
+                    input(
+                        class='remember-id-checkbox'
+                        type='checkbox'
+                    )
+                    label 아이디 저장
+                a(href='//google.com' class='others__find-id-pw-link') 아이디 / 비밀번호 찾기
+                a(href='//naver.com' class='others__signup-link') 회원가입
+
+            button(
+                class='login-btn'
+            ) 로그인
