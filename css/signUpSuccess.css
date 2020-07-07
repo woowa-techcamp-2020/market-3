@@ -1,0 +1,40 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+header {
+    padding-bottom: 1.5rem;
+}
+
+.redirect {
+    display: flex;
+    align-items: center;
+    color: #2980b9;
+    padding-bottom: 0.5rem;
+}
+
+.user-info {
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+    width: 300px;
+}
+
+.user-info__item {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0.2rem;
+}
+
+.user-info__item__label, .user-info__item__data {
+    padding-right: 0.5rem;
+}
+
+.user-info__item__label {
+    width: 60px;
+    color: gray;
+}
+
