@@ -38,3 +38,8 @@ body {
 .email-id-form, .email-domain-form {
     display: inline-block;
 }
+
+
+.warning {
+    border-color: #FF431B;
+}
