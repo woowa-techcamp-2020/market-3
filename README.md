@@ -1,5 +1,7 @@
 # 배민상회
 
+[![Build Status](https://travis-ci.org/woowa-techcamp-2020/market-3.svg?branch=dev)](https://travis-ci.org/woowa-techcamp-2020/market-3)
+
 # Development Guide
 
 ## 처음 PR 날릴 때
