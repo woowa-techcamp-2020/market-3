@@ -6,136 +6,143 @@ html(lang='en')
         style
             include ../public/css/signUp.css
     body
-        header
-            div(class='banner') 배민 사장님 광장
+        header(class='banner')
+            img(src="/img/banner.png" class='banner__img'  alt='banner')
 
         div(class='container')
-            section(class='requirements')
-                div(class='instruction') 필수 정보를 입력해주세요
+            form(class='data' method='POST')
+                section(class='requirements')
+                    div(class='instruction') 필수 정보를 입력해주세요.
 
-                form(class='data', method='POST')
-                div(class='id-form')
+                    div(class='id-form')
+                        input(
+                            type = 'text'
+                            class = 'id-form__input input-form'
+                            placeholder = '아이디*(4~20자)'
+                        )
+
+                    div(class='password-form')
+                        input(
+                            type = 'text'
+                            class = 'password-form__input input-form'
+                            placeholder = '비밀번호*(영문+숫자, 8~20자)'
+                        )
+
+                    div(class='password-check-form')
+                        input(
+                            type = 'text'
+                            class = 'password-check-form__input input-form'
+                            placeholder = '비밀번호 재확인*'
+                        )
+
+                    div(class='email-form')
+                        input(
+                            type = 'text'
+                            class = 'email-form__id-input input-form'
+                            placeholder = '이메일 앞자리*'
+                        )
+                        p(class='email-form__at') @
+                        input(
+                            type = 'text'
+                            class = 'email-form__domain-input input-form'
+                            placeholder = '이메일 뒷자리*'
+                        )
+
+                    div(class='email-domain-selector')
+                        select(
+                            class = 'email-domain-selector__list input-form'
+                        )
+                            option(value='') 이메일 선택
+                            option(value='gmail.com') gmail.com
+                            option(value='naver.com') naver.com
+                            option(value='hanmail.net') hanmail.net
+
+                    div(class='name-form')
+                        input(
+                            type = 'text'
+                            class = 'name-form__input input-form'
+                            placeholder = '이름*'
+                        )
+
+                    div(class='mobile-form')
+                        input(
+                            type = 'text'
+                            class = 'mobile-form__input input-form' 
+                            placeholder = '휴대폰*'
+                        )
+                        button(
+                            class = 'mobile-form__valid-btn'
+                        ) 인증받기
+
+                    div(class="description")
+                        p(class="description__item") · 인증번호 전송은 통신사에 따라 최대 1분까지 소요될 수 있습니다
+                        p(class="description__item") · 인증번호가 도착하지 않을 경우 '인증번호 재전송'을 눌러주세요
+
+                section(class='optional')
+                    div(class='option-check-form')
+                        input(
+                            class='option-check__checkbox'
+                            type = 'checkbox'
+                        ) 
+                        label(class='option-check__description') 선택 정보를 입력하시겠어요? 
+                        a(href='//google.com' class="option-check__link") 내용보기
+
+                    div(class='zipcode-form')
+                        input(
+                            type = 'text'
+                            class = 'zipcode-form__input input-form'
+                            placeholder = '우편번호'
+                        )
+
+                        button(
+                            class = 'zipcode-form__valid-btn'
+                        ) 주소찾기
+
                     input(
                         type = 'text'
-                        class = 'id-form__input text-input-form'
-                        placeholder = '아이디*(4~20자)'
+                        class = 'address-form__address-input input-form'
+                        placeholder = '주소'
                     )
 
-                div(class='password-form')
                     input(
                         type = 'text'
-                        class = 'password-form__input text-input-form'
-                        placeholder = '비밀번호*(영문+숫자, 8~20자)'
+                        class = 'address-form__detail-address-input input-form'
+                        placeholder = '상세주소'
                     )
 
-                div(class='password-check-form')
-                    input(
-                        type = 'text'
-                        class = 'password-check-form__input text-input-form'
-                        placeholder = '비밀번호 재확인*'
-                    )
+                section(class='agreement')
+                    div(class='agreement-form-all')
+                        input(
+                            class='agreement-form-all__checkbox'
+                            type = 'checkbox'
+                        ) 
+                        label(class="agreement-form-all__text") 전체 약관에 동의합니다.
 
-                div(class='email-id-form')
-                    input(
-                        type = 'text'
-                        class = 'email-id-form__input'
-                        placeholder = '이메일 앞자리*'
-                    )
-                span @
-                div(class='email-domain-form')
-                    input(
-                        type = 'text'
-                        class = 'email-domain-form__input'
-                        placeholder = '이메일 뒷자리*'
-                    )
+                    div(class='agreement-form-must')
+                        input(
+                            class='agreement-form-must-checkbox'
+                            type = 'checkbox'
+                        ) 
+                        label(class="agreement-form-must__text") 필수 항목에 동의합니다. 
 
-                div(class='email-domain-selector')
-                    select(
-                        class = 'email-domain-selector__list'
-                    )
-                        option(value='') 이메일 선택
-                        option(value='gmail.com') gmail.com
-                        option(value='naver.com') naver.com
-                        option(value='hanmail.net') hanmail.net
+                    div(class='agreement-links')
+                        a(href='//google.com' class='agreement-links__item') 배민사장님광장 이용약관
+                        a(href='//google.com' class='agreement-links__item') 개인정보 수집이용 동의
 
-                div(class='name-form')
-                    input(
-                        type = 'text'
-                        class = 'name-form__input text-input-form'
-                        placeholder = '이름*'
-                    )
+                    div(class='agreement-form-optional')
+                        input(
+                            class='address-form-optional-checkbox'
+                            type='checkbox'
+                        ) 
+                        label(class="agreement-form-optional__text") 광고성 정보 수신 동의(선택)
 
-                div(class='mobile-form')
-                    input(
-                        type = 'text'
-                        class = 'mobile-form__input '
-                        placeholder = '휴대폰*'
-                    )
+                    div(class="agreement-description")
+                        p(class='agreement-description__item') · 만 14세 이상 회원만 가입 가능합니다.
+                        a(href='//google.com' class='agreement-description__links') 내용보기
+
                     button(
-                        class = 'mobile-form__valid-btn'
-                    ) 인증받기
+                        class='complete-btn'
+                        ) 가입완료
 
-                    p(class='mobile-form__description__item') 인증번호 전송은 통신사에 따라 최대 1분까지 소요될 수 있습니다
-                    p(class='mobile-form__description__item') 인증번호가 도착하지 않을 경우 '인증번호 재전송'을 눌러주세요.
-
-            section(class='optional')
-                div(class='address-form')
-                input(
-                    class='address-form__checkbox'
-                    type = 'checkbox'
-                ) 
-                label 선택 정보를 입력하시겠어요? 
-                br
-
-                input(
-                    type = 'text'
-                    class = 'address-form__zipcode-input'
-                    placeholder = '우편번호'
-                )
-                button(
-                    class = 'address-form__zipcode-valid-btn'
-                ) 주소찾기
-                br
-                input(
-                    type = 'text'
-                    class = 'address-form__address-input text-input-form'
-                    placeholder = '주소'
-                )
-                br
-                input(
-                    type = 'text'
-                    class = 'address-form__detail-address-input text-input-form'
-                    placeholder = '상세주소'
-                )
-
-            section(class='agreement')
-                div(class='agreement-form')
-                input(
-                    class='agreement-form__all-checkbox'
-                    type = 'checkbox'
-                ) 
-                label 전체 약관에 동의합니다.
-                br
-                input(
-                    class='agreement-form__must-checkbox'
-                    type = 'checkbox'
-                ) 
-                label 필수 항목에 동의합니다. 
-                    br
-                    a 배민사장님광장 이용약관
-                    a 개인정보 수집이용 동의
-                br
-                input(
-                    class='address-form__optional-checkbox'
-                    type = 'checkbox'
-                ) 
-                label 광고성 정보 수신 동의(선택)
-                br
-                p 만 14세 이상 회원만 가입 가능합니다.
-                    a 내용보기
-
-                button(
-                    class='complete-btn'
-                    ) 가입완료
         script
             include ../public/js/signUp.js
