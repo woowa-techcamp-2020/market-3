@@ -42,7 +42,7 @@ section {
 
 .input-form {
   width: 95%;
-  margin: 0 0 10px 0;
+  margin: 7px 0 0 0;
   padding-left: 5%;
   height: 32px;
   border: 0.5px solid #bdc3c7;
@@ -177,4 +177,16 @@ section {
 
 .warning {
   border-color: #ff431b;
+}
+
+.warning-text {
+  color: #ff431b;
+  font-size: 0.7em;
+  margin: 1% 0 0 5%;
+}
+
+.success-text {
+  color: #bdc3c7;
+  font-size: 0.7em;
+  margin: 1% 0 0 5%;
 }
