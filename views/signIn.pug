@@ -4,15 +4,16 @@ html(lang='en')
         title 배민상회
         meta( name='viewport' content='width=device-width, initial-scale=1.0')
         style 
-            include ../static/css/signIn.css
+            include ../public/css/signIn.css
     body
-        header(class='banner') 배민 사장님 광장
+        header(class='banner') 
+            img(src="/img/banner.png" class='banner__img'  alt='banner')
 
         div(class='container')
             form(action='/api/login' method='POST')
                 div(class='id-form')
                     input(
-                        class='id-form__input text-input-form'
+                        class='id-form__input input-form'
                         name='id'
                         type='text'
                         placeholder='아이디'
@@ -20,22 +21,24 @@ html(lang='en')
     
                 div(class='password-form')
                     input(
-                        class='password-form__input password-input-form'
+                        class='password-form__input input-form'
                         name='password'
                         type='password'
                         placeholder='비밀번호'
                     )
     
-                div(class='others')
-                    div(class='remeber-id')
+                div(class='others-form')
+                    div(class='remember-id')
                         input(
-                            class='remember-id-checkbox'
+                            class='remember-id__checkbox'
                             name='willRemember'
                             type='checkbox'
                         )
-                        label 아이디 저장
-                    a(href='//google.com' class='others__find-id-pw-link') 아이디 / 비밀번호 찾기
-                    a(href='//naver.com' class='others__signup-link') 회원가입
+                        label(class='remember-id__label') 아이디 저장
+
+                    div(class='others-form__links')
+                        div(class='others__find-id-pw-link') 아이디 / 비밀번호 찾기
+                        div(class='others__signup-link') 회원가입
     
                 button(
                     class='login-btn'
