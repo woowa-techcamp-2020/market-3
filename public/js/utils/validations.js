@@ -28,7 +28,7 @@ function isValidPassword(password) {
 }
 
 function hasInvalidPasswordInput(password) {
-  const regexp = /[^a-zA-Z0-9]/
+  const regexp = /[^a-zA-Z0-9]/;
   return regexp.test(password);
 }
 
@@ -37,5 +37,5 @@ function isRightPasswordLength(password) {
 }
 
 function isValidPasswordChecking(firstPassword, secondPassword) {
-  return firstPassword === secondPassword
+  return firstPassword === secondPassword;
 }

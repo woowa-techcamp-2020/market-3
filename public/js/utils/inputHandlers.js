@@ -1,51 +1,52 @@
 function idInputHandler(e) {
-  const id = e.target.value;
-  const parentNode = e.target.parentNode;
-  let warningDOMElement = null;
+  const targetNode = e.target;
+  const id = targetNode.value;
+  const parentNode = targetNode.parentNode;
+  const nodeElement = generateNodeElement();
 
   if (isValidId(id)) {
-    warningDOMElement = generateWarningDOM("사용 가능한 아이디입니다");
-    e.target.classList.remove("warning");
+    makeSuccessNode(nodeElement, targetNode, "사용 가능한 아이디입니다");
   } else {
     if (hasCapital(id)) {
-      warningDOMElement = generateWarningDOM("영문 대문자는 아이디로 사용이 불가합니다");
+      makeWarningNode(nodeElement, targetNode, "대문자는 아이디로 사용이 불가합니다");
     } else if (hasSpeical(id)) {
-      warningDOMElement = generateWarningDOM("특수기호는 (-),(_)만 사용 가능합니다");
+      makeWarningNode(nodeElement, targetNode, "특수기호는 (-),(_)만 사용 가능합니다");
     } else if (hasKorean(id)) {
-      warningDOMElement = generateWarningDOM("한글은 아이디로 사용이 불가합니다");
+      makeWarningNode(nodeElement, targetNode, "한글은 아이디로 사용이 불가합니다");
     } else if (!isRightIdLength(id)) {
-      warningDOMElement = generateWarningDOM("아이디는 4~20자로 제한됩니다");
+      makeWarningNode(nodeElement, targetNode, "아이디는 4~20자로 제한됩니다");
     }
-8 
-    e.target.classList.add("warning");
   }
-  
-  updateWarningDOM(warningDOMElement, parentNode);
+  appendNodeMsg(nodeElement, parentNode);
 }
 
 
 function passwordInputHandler(e) {
-  const password = e.target.value;
-  const parentNode = e.target.parentNode;
-  let warningDOMElement = null;
+  const targetNode = e.target
+  const password = targetNode.value;
+  const parentNode = targetNode.parentNode;
+  const nodeElement = generateNodeElement();
   
   if (isValidPassword(password)) {
-    warningDOMElement = generateWarningDOM("");
-    e.target.classList.remove("warning");
+    makeSuccessNode(nodeElement, targetNode, "");
   } else {
-    warningDOMElement = generateWarningDOM("유효하지 않은 비밀번호입니다");
-    e.target.classList.add("warning");
+    makeWarningNode(nodeElement, targetNode, "유효하지 않은 비밀번호입니다");
   }
-  updateWarningDOM(warningDOMElement, parentNode);
+  appendNodeMsg(nodeElement, parentNode);
 }
 
+
 function passwordChecker(e) {
-  const firstPassword = e.target.value;
-  const SecondPassword = e.target.parentNode.previousSibling.firstElementChild.value;
-  const parentNode = e.target.parentNode;
-  let warningDOMElement = null;
+  const targetNode = e.target
+  const parentNode = targetNode.parentNode;
+  const firstPassword = targetNode.parentNode.previousSibling.firstElementChild.value;
+  const secondPassword = targetNode.value;
+  const nodeElement = generateNodeElement();
 
-  // if(isValidPasswordChecking(, password)) {
-
-  // }
+  if(isValidPasswordChecking(firstPassword, secondPassword)) {
+    makeSuccessNode(nodeElement, targetNode, "");
+  } else {
+    makeWarningNode(nodeElement, targetNode, "비밀번호가 일치하지 않습니다");
+  }
+  appendNodeMsg(nodeElement, parentNode);
 }
