@@ -10,13 +10,14 @@ html(lang='en')
             img(src="/img/banner.png" class='banner__img'  alt='banner')
 
         div(class='container')
-            form(class='data' method='POST')
+            form(action='/user' class='data' method='POST')
                 section(class='requirements')
                     div(class='instruction') 필수 정보를 입력해주세요.
 
                     div(class='id-form')
                         input(
                             type = 'text'
+                            name = 'id'
                             class = 'id-form__input input-form'
                             placeholder = '아이디*(4~20자)'
                         )
@@ -24,6 +25,7 @@ html(lang='en')
                     div(class='password-form')
                         input(
                             type = 'password'
+                            name = 'password'
                             class = 'password-form__input input-form'
                             placeholder = '비밀번호*(영문+숫자, 8~20자)'
                         )
@@ -31,18 +33,21 @@ html(lang='en')
                     div(class='password-check-form')
                         input(
                             type = 'password'
+                            name = 'password-check'
                             class = 'password-check-form__input input-form'
                             placeholder = '비밀번호 재확인*'
                     )
                     div(class='email-form')
                         input(
                             type = 'text'
+                            name = 'email-id'
                             class = 'email-form__id-input input-form'
                             placeholder = '이메일 앞자리*'
                         )
                         p(class='email-form__at') @
                         input(
                             type = 'text'
+                            name = 'email-domain'
                             class = 'email-form__domain-input input-form'
                             placeholder = '이메일 뒷자리*'
                         )
@@ -60,6 +65,7 @@ html(lang='en')
                     div(class='name-form')
                         input(
                             type = 'text'
+                            name = 'name'
                             class = 'name-form__input input-form'
                             placeholder = '이름*'
                         )
@@ -67,6 +73,7 @@ html(lang='en')
                     div(class='mobile-form')
                         input(
                             type = 'text'
+                            name = 'phone'
                             class = 'mobile-form__input input-form' 
                             placeholder = '휴대폰*'
                         )
@@ -90,6 +97,7 @@ html(lang='en')
                     div(class='zipcode-form')
                         input(
                             type = 'text'
+                            name = 'zipcode'
                             class = 'zipcode-form__input input-form'
                             placeholder = '우편번호'
                         )
@@ -100,12 +108,14 @@ html(lang='en')
 
                     input(
                         type = 'text'
+                        name = 'address'
                         class = 'address-form__address-input input-form'
                         placeholder = '주소'
                     )
 
                     input(
                         type = 'text'
+                        name = 'address-detail'
                         class = 'address-form__detail-address-input input-form'
                         placeholder = '상세주소'
                     )
@@ -142,6 +152,7 @@ html(lang='en')
 
                     button(
                         class='complete-btn'
+                        type='submit'
                         ) 가입완료
 
         script
