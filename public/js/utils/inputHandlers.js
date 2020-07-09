@@ -58,9 +58,9 @@ function emailDomainHandler(e) {
   const emailDomains = targetNode.options[targetNode.options.selectedIndex].value;
 
   if(emailDomains === 'others') {
-    blockInput(emailDomainInputForm);
+    unblockInput(emailDomainInputForm);
   } else {
-    unblockInput(emailDomainInputForm, targetNode);
+    emailBlockInput(emailDomainInputForm, targetNode);
   }
 }
 
@@ -92,31 +92,59 @@ function mobileInputHandler(e) {
 }
 
 
-function modalHandler(e) {
+function mobileModalHandler(e) {
   e.preventDefault()
   const targetNode = e.target;
   const mobilePhoneNumber = targetNode.previousSibling.value;
   const certTime = document.querySelector(".cert-time");
 
   if(isValidPhoneNumber(mobilePhoneNumber)) {
-    mobileFormmodal.style.display = "block";
+    mobileFormModal.style.display = "block";
     printTime(certTime);
   }
 }
 
 function printTime(nodeElement) {
-  let num = 3
+  let timeLeft = 120;
   const interval = setInterval(function (){
-    nodeElement.innerHTML = `${Math.floor(num / 60)}분 ${num % 60}초 남았습니다`;
-    num -= 1;
-    if(num < 0) {
-      clearInterval(interval)
-      nodeElement.innerHTML = '입력 시간이 초과되었습니다'
+    nodeElement.innerHTML = `${Math.floor(timeLeft / 60)}분 ${timeLeft % 60}초 남았습니다`;
+    timeLeft -= 1;
+    if(timeLeft < 0) {
+      clearInterval(interval);
+      nodeElement.innerHTML = '입력 시간이 초과되었습니다';
+    } else if (mobileFormModal.style.display === "none") {
+      clearInterval(interval);
     }
   }, 1000)
 }
 
-function closeHandler(e) {
-  mobileFormmodal.style.display = "none";
-  clearInterval(printTime)
+function mobileModalcloser(e) {
+  mobileFormModal.style.display = "none";
+}
+
+function addressInputChecker(e) {
+  const targetNode = e.target;
+
+  if(targetNode.checked) {
+    unblockInput(zipcodeInputForm);
+    unblockInput(addressInputForm);
+    unblockInput(addressInputFormDetail);
+    addressSearchBtn.disabled = false;
+  } else {
+    blockInput(zipcodeInputForm);
+    blockInput(addressInputForm);
+    blockInput(addressInputFormDetail);
+    addressSearchBtn.disabled = true;
+  }
+}
+
+function addressModalHandler(e) {
+  e.preventDefault()
+  if(addressFormCheckbox.checked) {
+    addressFormModal.style.display = "block";
+  }
+}
+
+function addressModalcloser(e) {
+  addressFormModal.style.display = "none";
 }
