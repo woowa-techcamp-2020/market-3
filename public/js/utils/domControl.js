@@ -7,7 +7,7 @@ function makeWarningNode(nodeElement, inputFormNode, msg) {
   addClassInNodeElement(nodeElement, "warning-text");
   addClassInNodeElement(inputFormNode, "warning");
 }
-5;
+
 function makeSuccessNode(nodeElement, inputFormNode, msg) {
   writeMsgInNodeElement(nodeElement, msg);
   addClassInNodeElement(nodeElement, "success-text");
