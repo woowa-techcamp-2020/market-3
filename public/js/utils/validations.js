@@ -48,3 +48,7 @@ function isValidPasswordChecking(firstPassword, secondPassword) {
 function isValidName(name) {
   return !hasSpeical(name) && !hasNumber(name);
 }
+
+function isValidPhoneNumber(phoneNumber) {
+  return hasNumber(phoneNumber);
+}
