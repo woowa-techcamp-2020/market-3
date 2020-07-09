@@ -23,18 +23,17 @@ html(lang='en')
 
                     div(class='password-form')
                         input(
-                            type = 'text'
+                            type = 'password'
                             class = 'password-form__input input-form'
                             placeholder = '비밀번호*(영문+숫자, 8~20자)'
                         )
 
                     div(class='password-check-form')
                         input(
-                            type = 'text'
+                            type = 'password'
                             class = 'password-check-form__input input-form'
                             placeholder = '비밀번호 재확인*'
-                        )
-
+                    )
                     div(class='email-form')
                         input(
                             type = 'text'
@@ -146,3 +145,6 @@ html(lang='en')
 
         script
             include ../public/js/signUp.js
+            include ../public/js/utils/inputHandlers.js
+            include ../public/js/utils/domControl.js
+            include ../public/js/utils/validations.js
