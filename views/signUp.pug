@@ -75,7 +75,7 @@ html(lang='en')
                         ) 인증받기
                         div(class = 'mobile-form__modal')
                             div(class = 'mobile-form_modal-content')
-                                span(class = 'close') &times;
+                                span(class = 'mobile-form_modal-close') &times;
                                 p(class = 'text') 인증번호를 입력하세요
                                 input(
                                     type = 'text'
@@ -99,7 +99,7 @@ html(lang='en')
                     div(class='zipcode-form')
                         input(
                             type = 'text'
-                            class = 'zipcode-form__input input-form'
+                            class = 'zipcode-form__input input-form blocked'
                             placeholder = '우편번호'
                         )
 
@@ -109,15 +109,26 @@ html(lang='en')
 
                     input(
                         type = 'text'
-                        class = 'address-form__address-input input-form'
+                        class = 'address-form__address-input input-form blocked'
                         placeholder = '주소'
                     )
 
                     input(
                         type = 'text'
-                        class = 'address-form__detail-address-input input-form'
+                        class = 'address-form__detail-address-input input-form blocked'
                         placeholder = '상세주소'
                     )
+                    div(class = 'address-form__modal')
+                        div(class = 'address-form_modal-content')
+                            span(class = 'address-form_modal-close') &times;
+                            p(class = 'text') 주소를 검색하세요
+                            input(
+                                type = 'text'
+                                class = 'input-form'
+                            )
+                            p(class ='address-tip') 예) 서울시 송파구 위례성대로 2
+                                
+                            
 
                 section(class='agreement')
                     div(class='agreement-form-all')

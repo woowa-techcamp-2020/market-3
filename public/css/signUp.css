@@ -239,7 +239,8 @@ section {
   transform: translateX(-50%);
 }
 
-.close {
+.address-form_modal-close,
+.mobile-form_modal-close {
   position: absolute;
   color: #aaa;
   right: 5%;
@@ -247,9 +248,54 @@ section {
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.address-form_modal-close:hover,
+.address-form_modal-close:focus,
+.mobile-form_modal-close:hover,
+.mobile-form_modal-close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.address-form__modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0,0,0,0.4);
+}
+
+.address-form_modal-content {
+  position: relative;
+  background-color: #ffffff;
+  margin: 15% auto;
+  width: 85%;
+  height: 40%;            
+}
+
+.address-form_modal-content .text {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.address-form_modal-content .input-form {
+  position: absolute;
+  width: 60%;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.address-form_modal-content .address-tip {
+  position: absolute;
+  font-size: 14px;
+  width: 60%;
+  top: 60%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
 }
