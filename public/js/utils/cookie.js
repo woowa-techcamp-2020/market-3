@@ -18,7 +18,8 @@ function checkCookie(cookieName) {
       .split(";")
       .some((item) => item.trim().startsWith(cookieName + "="))
   ) {
-    console.log(`The cookie ${cookieName} exists `);
+    return true;
   }
+  return false;
 }
 

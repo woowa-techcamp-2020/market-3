@@ -14,7 +14,8 @@ async function createUser(req, res) {
   };
   try {
     await insertUser(userObj);
-    res.status(200).send("user has been successfully created");
+    // Todo: set Cookies for new registerd user
+    res.status(200).redirect('../../signupsuccess');
   } catch {
     res.status(500).send("user has not been created");
   }
