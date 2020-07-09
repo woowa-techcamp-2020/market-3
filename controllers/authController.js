@@ -5,9 +5,9 @@ async function login(req, res) {
 
   const user = await getUserById(id);
   const isValid = await verifyPassword(password, user);
-  console.log(isValid);
+
   if (isValid) {
-    res.cookie("id", id);
+    res.cookie("id", id, { path: "/" });
     res.status(200).send("login Success");
     // res.redirect("../..");
   } else {
@@ -16,7 +16,8 @@ async function login(req, res) {
 }
 
 async function logout(req, res) {
-  res.status(200).send("api logout called");
+  res.clearCookie("id");
+  res.status(200).send("successfully logout");
 }
 
 module.exports = {
