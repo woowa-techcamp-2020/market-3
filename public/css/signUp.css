@@ -8,8 +8,6 @@
 body {
   height: 100%;
   width: 100%;
-  /* position: relative;
-  justify-content: center; */
 }
 
 .banner {
@@ -58,7 +56,7 @@ section {
 }
 
 .email-form__at {
-  margin: 0 5px 15px 5px;
+  margin: 0 5px 0.3% 5px;
   font-size: large;
   font-weight: 300;
 }
@@ -189,4 +187,8 @@ section {
   color: #bdc3c7;
   font-size: 0.7em;
   margin: 1% 0 0 5%;
+}
+
+.blocked {
+  background-color: #bdc3c7;
 }
