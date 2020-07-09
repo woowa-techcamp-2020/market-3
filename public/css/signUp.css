@@ -190,3 +190,7 @@ section {
   font-size: 0.7em;
   margin: 1% 0 0 5%;
 }
+
+.blocked {
+  background-color: #bdc3c7;
+}
