@@ -7,15 +7,14 @@ html(lang='en')
         style
             include ../public/css/signUpSuccess.css
     body
-        header
-            div(class='banner') 배민 사장님 광장
+        header(class="banner")
+            img(src="/img/banner.png" class='banner__img'  alt='banner')
             div(class='banner__text') 회원이 되셨습니다.
 
         div(class='container')
             div(class='redirect')
                 div(class='redirect__text') 메인으로
                 span(class='redirect__icon material-icons') arrow_forward
-
 
             div(class='user-info')
                 div(class='user-info__item')
@@ -32,6 +31,6 @@ html(lang='en')
                     div(class='user-info__item__data') 010-1111-9999
 
             div(class='description') 
-                p(class='description__text') 위 내용은 
-                    a(href='//google.com') 내 정보 관리
+                p(class='description__text') · 위 내용은 
+                    a(href='//google.com' class='description__link') 내 정보 관리
                     | 에서 수정하실 수 있습니다.
