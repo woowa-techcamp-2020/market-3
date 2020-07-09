@@ -73,6 +73,15 @@ html(lang='en')
                         button(
                             class = 'mobile-form__valid-btn'
                         ) 인증받기
+                        div(class = 'mobile-form__modal')
+                            div(class = 'mobile-form_modal-content')
+                                span(class = 'close') &times;
+                                p(class = 'text') 인증번호를 입력하세요
+                                input(
+                                    type = 'text'
+                                    class = 'input-form'
+                                )
+                                div(class ='cert-time')
 
                     div(class="description")
                         p(class="description__item") · 인증번호 전송은 통신사에 따라 최대 1분까지 소요될 수 있습니다
