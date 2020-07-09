@@ -63,3 +63,17 @@ function emailDomainHandler(e) {
     unblockInput(emailDomainInputForm, targetNode);
   }
 }
+
+function nameInputHandler(e) {
+  const targetNode = e.target;
+  const parentNode = targetNode.parentNode;
+  const name = targetNode.value;
+  const nodeElement = generateNodeElement();
+
+  if (isValidName(name)) {
+    makeSuccessNode(nodeElement, targetNode, "");
+  } else {
+    makeWarningNode(nodeElement, targetNode, "유효하지 않은 이름입니다");
+  }
+  appendNodeMsg(nodeElement, parentNode);
+}
