@@ -32,3 +32,15 @@ function appendNodeMsg(nodeElement, parentNodeElement) {
     ? parentNodeElement.replaceChild(nodeElement, parentNodeElement.lastElementChild)
     : parentNodeElement.appendChild(nodeElement);
 }
+
+function blockInput(emailDomainInputForm) {
+  emailDomainInputForm.readOnly = false;
+  emailDomainInputForm.value = ''
+  removeClassInNodeElement(emailDomainInputForm, "blocked");
+}
+
+function unblockInput(emailDomainInputForm, targetNode) {
+  emailDomainInputForm.readOnly = true;
+  emailDomainInputForm.value = targetNode.value;
+  addClassInNodeElement(emailDomainInputForm, "blocked");
+}

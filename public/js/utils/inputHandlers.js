@@ -50,3 +50,16 @@ function passwordChecker(e) {
   }
   appendNodeMsg(nodeElement, parentNode);
 }
+
+function emailDomainHandler(e) {
+  const targetNode = e.target;
+  const parentNode = targetNode.parentNode;
+  const emailDomainInputForm = parentNode.previousSibling.lastElementChild;
+  const emailDomains = targetNode.options[targetNode.options.selectedIndex].value;
+
+  if(emailDomains === 'others') {
+    blockInput(emailDomainInputForm);
+  } else {
+    unblockInput(emailDomainInputForm, targetNode);
+  }
+}
