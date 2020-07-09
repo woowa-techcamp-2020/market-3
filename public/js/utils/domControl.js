@@ -44,7 +44,6 @@ function blockInput(input) {
   addClassInNodeElement(input, "blocked");
 }
 
-
 function emailBlockInput(input, targetNode) {
   input.readOnly = true;
   input.value = targetNode.value;

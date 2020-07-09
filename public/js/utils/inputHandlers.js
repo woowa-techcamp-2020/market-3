@@ -166,3 +166,12 @@ function agreementFormHandler(e) {
     agreementFormAll.checked = false;
   }
 }
+
+function signUpFailHandler(e) {
+  const warningNode = [idFormInput, passwordFormInput, passwordCheckFormInput, nameFormInput, mobileFormInput].filter(node => hasWarningMsg(node));
+  
+  if(warningNode.length > 0) {
+    e.preventDefault();
+    warningNode[0].focus();
+  }
+}

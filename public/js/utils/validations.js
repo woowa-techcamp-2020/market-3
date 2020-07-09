@@ -52,3 +52,7 @@ function isValidName(name) {
 function isValidPhoneNumber(phoneNumber) {
   return hasNumber(phoneNumber);
 }
+
+function hasWarningMsg(nodeElement) {
+  return nodeElement.classList.contains('warning');
+}
