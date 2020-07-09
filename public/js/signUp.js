@@ -16,6 +16,7 @@ const addressFormModal = document.querySelector('.address-form__modal');
 const agreementFormAll = document.querySelector('.agreement-form-all__checkbox');
 const agreementFormMust = document.querySelector('.agreement-form-must-checkbox');
 const agreementFormOptional = document.querySelector('.address-form-optional-checkbox');
+const completeBtn = document.querySelector('.complete-btn');
 
 idFormInput.addEventListener("blur", idInputHandler);
 passwordFormInput.addEventListener("blur", passwordInputHandler);
@@ -34,4 +35,5 @@ addressFormModal.addEventListener("click", addressModalcloser);
 agreementFormAll.addEventListener("change", agreementFormAllHandler);
 agreementFormMust.addEventListener("change", agreementFormHandler);
 agreementFormOptional.addEventListener("change", agreementFormHandler);
+completeBtn.addEventListener("click", signUpFailHandler);
 
