@@ -148,3 +148,21 @@ function addressModalHandler(e) {
 function addressModalcloser(e) {
   addressFormModal.style.display = "none";
 }
+
+function agreementFormAllHandler(e) {
+  if(agreementFormAll.checked) {
+    agreementFormMust.checked = true;
+    agreementFormOptional.checked = true;
+  } else {
+    agreementFormMust.checked = false;
+    agreementFormOptional.checked = false;
+  }
+}
+
+function agreementFormHandler(e) {
+  if(agreementFormMust.checked && agreementFormOptional.checked) {
+    agreementFormAll.checked = true;
+  } else {
+    agreementFormAll.checked = false;
+  }
+}
