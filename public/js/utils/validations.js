@@ -4,6 +4,11 @@ function isValidId(id) {
   );
 }
 
+function hasNumber(id) {
+  const regexp = /[0-9]/;
+  return regexp.test(id);
+}
+
 function hasCapital(id) {
   const regexp = /[A-Z]/;
   return regexp.test(id);
@@ -38,4 +43,8 @@ function isRightPasswordLength(password) {
 
 function isValidPasswordChecking(firstPassword, secondPassword) {
   return firstPassword === secondPassword;
+}
+
+function isValidName(name) {
+  return !hasSpeical(name) && !hasNumber(name);
 }
