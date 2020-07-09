@@ -77,3 +77,46 @@ function nameInputHandler(e) {
   }
   appendNodeMsg(nodeElement, parentNode);
 }
+
+function mobileInputHandler(e) {
+  const targetNode = e.target;
+  const parentNode = targetNode.parentNode;
+  const mobilePhoneNumber = targetNode.value;
+  const nodeElement = generateNodeElement();
+  if (isValidPhoneNumber(mobilePhoneNumber)) {
+    makeSuccessNode(nodeElement, targetNode, "");
+  } else {
+    makeWarningNode(nodeElement, targetNode, "유효하지 않은 휴대폰 번호입니다");
+  }
+  appendNodeMsg(nodeElement, parentNode);
+}
+
+
+function modalHandler(e) {
+  e.preventDefault()
+  const targetNode = e.target;
+  const mobilePhoneNumber = targetNode.previousSibling.value;
+  const certTime = document.querySelector(".cert-time");
+
+  if(isValidPhoneNumber(mobilePhoneNumber)) {
+    mobileFormmodal.style.display = "block";
+    printTime(certTime);
+  }
+}
+
+function printTime(nodeElement) {
+  let num = 3
+  const interval = setInterval(function (){
+    nodeElement.innerHTML = `${Math.floor(num / 60)}분 ${num % 60}초 남았습니다`;
+    num -= 1;
+    if(num < 0) {
+      clearInterval(interval)
+      nodeElement.innerHTML = '입력 시간이 초과되었습니다'
+    }
+  }, 1000)
+}
+
+function closeHandler(e) {
+  mobileFormmodal.style.display = "none";
+  clearInterval(printTime)
+}
