@@ -1,58 +1,58 @@
-function isValidId(id) {
+export function isValidId(id) {
   return (
     !hasCapital(id) && !hasSpeical(id) && !hasKorean(id) && isRightIdLength(id)
   );
 }
 
-function hasNumber(id) {
+export function hasNumber(id) {
   const regexp = /[0-9]/;
   return regexp.test(id);
 }
 
-function hasCapital(id) {
+export function hasCapital(id) {
   const regexp = /[A-Z]/;
   return regexp.test(id);
 }
 
-function hasSpeical(id) {
+export function hasSpeical(id) {
   const regexp = /[\{\}\[\]\/?.,;:|\)*~`!^\+<>@\#$%&\\\=\(\'\"]/;
   return regexp.test(id);
 }
 
-function hasKorean(id) {
+export function hasKorean(id) {
   const regexp = /[ㄱ-힣]/;
   return regexp.test(id);
 }
 
-function isRightIdLength(id) {
+export function isRightIdLength(id) {
   return id.length >= 4 && id.length <= 20;
 }
 
-function isValidPassword(password) {
+export function isValidPassword(password) {
   return !hasInvalidPasswordInput(password) && isRightPasswordLength(password);
 }
 
-function hasInvalidPasswordInput(password) {
+export function hasInvalidPasswordInput(password) {
   const regexp = /[^a-zA-Z0-9]/;
   return regexp.test(password);
 }
 
-function isRightPasswordLength(password) {
+export function isRightPasswordLength(password) {
   return password.length >= 8 && password.length <= 20;
 }
 
-function isValidPasswordChecking(firstPassword, secondPassword) {
+export function isValidPasswordChecking(firstPassword, secondPassword) {
   return firstPassword === secondPassword;
 }
 
-function isValidName(name) {
+export function isValidName(name) {
   return !hasSpeical(name) && !hasNumber(name);
 }
 
-function isValidPhoneNumber(phoneNumber) {
+export function isValidPhoneNumber(phoneNumber) {
   return hasNumber(phoneNumber);
 }
 
-function hasWarningMsg(nodeElement) {
+export function hasWarningMsg(nodeElement) {
   return nodeElement.classList.contains('warning');
 }

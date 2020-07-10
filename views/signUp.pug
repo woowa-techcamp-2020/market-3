@@ -5,6 +5,7 @@ html(lang='en')
         meta( name='viewport', content='width=device-width, initial-scale=1.0')
         style
             include ../public/css/signUp.css
+        script(async='true' defer type='module' src="/js/signUp.js")
     body
         header(class='banner')
             img(src="/img/banner.png" class='banner__img'  alt='banner')
@@ -176,8 +177,3 @@ html(lang='en')
                         type='submit'
                         ) 가입완료
 
-        script
-            include ../public/js/signUp.js
-            include ../public/js/utils/inputHandlers.js
-            include ../public/js/utils/domControl.js
-            include ../public/js/utils/validations.js
