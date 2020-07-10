@@ -125,6 +125,7 @@ export function mobileInputHandler(e) {
 }
 
 export function mobileModalHandler(e) {
+  const mobileFormModal = document.querySelector('.mobile-form__modal');
   e.preventDefault();
   const targetNode = e.target;
   const mobilePhoneNumber = targetNode.previousSibling.value;
@@ -137,6 +138,7 @@ export function mobileModalHandler(e) {
 }
 
 export function printTime(nodeElement) {
+  const mobileFormModal = document.querySelector('.mobile-form__modal');
   let timeLeft = 120;
   const interval = setInterval(function () {
     nodeElement.innerHTML = `${Math.floor(timeLeft / 60)}분 ${
@@ -153,6 +155,7 @@ export function printTime(nodeElement) {
 }
 
 export function mobileModalcloser(e) {
+  const mobileFormModal = document.querySelector('.mobile-form__modal');
   mobileFormModal.style.display = "none";
 }
 
