@@ -24,6 +24,7 @@ const nameFormInput = document.querySelector(".name-form__input");
 const mobileFormInput = document.querySelector(".mobile-form__input");
 const mobileFormCloseBtn = document.querySelector(".mobile-form_modal-close");
 const mobileFormValidBtn = document.querySelector(".mobile-form__valid-btn");
+const mobileFormModal = document.querySelector('.mobile-form__modal');
 const addressFormCheckbox = document.querySelector(".option-check__checkbox");    
 const zipcodeInputForm = document.querySelector(".zipcode-form__input");    
 const addressInputForm = document.querySelector(".address-form__address-input");    
