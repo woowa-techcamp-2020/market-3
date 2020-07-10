@@ -1,3 +1,21 @@
+import {
+    idInputHandler,
+    passwordInputHandler,
+    passwordChecker,
+    emailDomainHandler,
+    nameInputHandler,
+    mobileInputHandler,
+    mobileModalHandler,
+    mobileModalcloser,
+    addressInputChecker,
+    addressModalHandler,
+    addressModalcloser,
+    agreementFormAllHandler,
+    agreementFormHandler,
+    signUpFailHandler
+} from '/js/utils/inputHandlers.js'
+
+
 const idFormInput = document.querySelector(".id-form__input");
 const passwordFormInput = document.querySelector(".password-form__input");
 const passwordCheckFormInput = document.querySelector(".password-check-form__input");

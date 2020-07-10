@@ -88,3 +88,19 @@ label {
   display: flex;
   justify-content: space-evenly;
 }
+
+.warning {
+  border-color: #ff431b;
+}
+
+.warning-text {
+  color: #ff431b;
+  font-size: 0.7em;
+  margin: 1% 0 0 5%;
+}
+
+.success-text {
+  color: #bdc3c7;
+  font-size: 0.7em;
+  margin: 1% 0 0 5%;
+}

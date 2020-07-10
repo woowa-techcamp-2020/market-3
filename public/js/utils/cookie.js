@@ -1,10 +1,10 @@
-function getCookie(cookieName) {
+export function getCookie(cookieName) {
     const cookieString = document.cookie.split(';').filter((item) => item.includes(cookieName))[0];
     const cookieValue = cookieString.split("=")[1];
     return cookieValue;
 }
 
-function setCookie(cookieName, cookieValue, expireDay) {
+export function setCookie(cookieName, cookieValue, expireDay) {
   const d = new Date();
   d.setTime(d.getTime() + expireDay * 24 * 60 * 60 * 1000);
   const expires = "expires=" + d.toUTCString();
@@ -12,7 +12,7 @@ function setCookie(cookieName, cookieValue, expireDay) {
   document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";" + domain;
 }
 
-function checkCookie(cookieName) {
+export function checkCookie(cookieName) {
   if (
     document.cookie
       .split(";")

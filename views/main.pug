@@ -5,8 +5,8 @@ html(lang='en')
         meta( name='viewport', content='width=device-width, initial-scale=1.0')
         style
             include ../public/css/main.css
-        script(src="/js/main.js" type="module")
-        script(src="/js/utils/cookie.js")
+        script(async='true' defer src="/js/main.js" type="module")
+        //- script(src="/js/utils/cookie.js")
     body
         div(class='container')
             div(class='greeting') 

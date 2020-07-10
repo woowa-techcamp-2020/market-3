@@ -1,3 +1,5 @@
+import { getCookie, setCookie, checkCookie } from '/js/utils/cookie.js'
+
 function hideGreeting() {
   const greeting = document.querySelector(".greeting");
   greeting.classList.add("hide");
