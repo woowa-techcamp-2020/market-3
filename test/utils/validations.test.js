@@ -1,4 +1,4 @@
-import { hasNumber } from "../../public/js/utils/validations";
+import { hasNumber, hasCapital } from "../../public/js/utils/validations";
 
 //given 파트는
 //  테스트에서 구체화하고자 하는 행동을 시작하기 전에 테스트 상태를 설명하는 부분이다.
@@ -9,32 +9,46 @@ import { hasNumber } from "../../public/js/utils/validations";
 
 describe("hasNumber", () => {
   // given
-  describe("문자열을 인자로 받았을 때", () => {
+  describe("문자열을 인자로 받는다", () => {
     // when
     describe("문자열에 숫자가 포함되어 있다면", () => {
-        const strWithNumber = 'dummy123';
+      const strWithNumber = "dummy123";
       // then
       it("True를 리턴한다", () => {
-          expect(hasNumber(strWithNumber)).toBeTruthy();
+        expect(hasNumber(strWithNumber)).toBeTruthy();
       });
     });
 
     // when
     describe("문자열에 숫자가 포함되어 있지 않다면", () => {
-        // then
-        const strWithoutNumber = 'dummy';
-        it("false를 리턴한다", () => {
-            expect(hasNumber(strWithoutNumber)).toBeFalsy();
-        });
+      // then
+      const strWithoutNumber = "dummy";
+      it("false를 리턴한다", () => {
+        expect(hasNumber(strWithoutNumber)).toBeFalsy();
       });
+    });
   });
+});
 
-//   // given
-//   describe("", () => {
-//     // when
-//     describe("", () => {
-//       // then
-//       it("", () => {});
-//     });
-//   });
+describe("hasCapital", () => {
+  // given
+  describe("문자열을 인자로 받는다", () => {
+    // when
+    describe("문자열에 영어 대문자가 포함되어 있다면", () => {
+      // then
+      const strWithCapital = 'DuMMY';
+      it("True를 리턴한다.", () => {
+        expect(hasCapital(strWithCapital)).toBeTruthy();
+      });
+    });
+
+    // when
+    describe("문자열에 영어 대문자가 포함되어 있지 않다면", () => {
+      // then
+      const strWithoutCapital = 'dummy';
+      it("False를 리턴한다.", () => {
+        expect(hasCapital(strWithoutCapital)).toBeFalsy();
+      });
+    });
+  });
 });
