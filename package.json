@@ -25,6 +25,8 @@
     "pug": "^3.0.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.10.4",
+    "babel-jest": "^26.1.0",
     "jest": "^26.1.0",
     "supertest": "^4.0.2"
   },
@@ -32,6 +34,19 @@
     "testEnvironment": "node",
     "coveragePathIgnorePatterns": [
       "/node_modules/"
-    ]
+    ],
+    "moduleFileExtensions": ["js", "json", "jsx", "ts", "tsx", "json"],
+    "transform": {
+      "^.+\\.(js|jsx)?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/$1"
+    },
+    "testMatch": [
+      "<rootDir>/**/*.test.(js|jsx|ts|tsx)",
+      "<rootDir>/(tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx))"
+    ],
+    "transformIgnorePatterns": ["<rootDir>/node_modules/"],
+    "verbose": true
   }
 }
