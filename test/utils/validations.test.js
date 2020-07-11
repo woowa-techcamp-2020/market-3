@@ -2,6 +2,7 @@ import {
   hasNumber,
   hasCapital,
   hasSpeical,
+  hasKorean,
 } from "../../public/js/utils/validations";
 
 //given 파트는
@@ -52,6 +53,29 @@ describe("hasCapital", () => {
       const strWithoutCapital = "dummy";
       it("False를 리턴한다.", () => {
         expect(hasCapital(strWithoutCapital)).toBeFalsy();
+      });
+    });
+  });
+});
+
+describe("hasKorean", () => {
+  // given
+  describe("문자열을 인자로 받는다", () => {
+    // when
+    describe("문자열에 한글이 포함되어 있다면", () => {
+      // then
+      const strWithKorean = "더미dummy";
+      it("True를 리턴한다.", () => {
+        expect(hasKorean(strWithKorean)).toBeTruthy();
+      });
+    });
+
+    // when
+    describe("문자열에 한글이 포함되어 있지 않다면", () => {
+      // then
+      const strWithoutKorean = "dummy";
+      it("False를 리턴한다.", () => {
+        expect(hasKorean(strWithoutKorean)).toBeFalsy();
       });
     });
   });
